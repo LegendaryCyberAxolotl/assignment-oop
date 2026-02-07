@@ -30,5 +30,8 @@ public class Main {
 
         StaticDataLoader.loadAll();
 
+        RenodCharacter.addRenod();
+
+
     }
 }
