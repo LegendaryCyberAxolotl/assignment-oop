@@ -1,37 +1,39 @@
-public class Projectile extends Skill {
-    private float basicStrength;
-    private float currentStrength = 0;
-    private float range;
-    private float speed;
-    private float strengthMod;
+import java.math.BigDecimal;
 
-    public Projectile (String skillName, float rechargeSeconds, int level, int power, float basicStrength, float range, float speed, float strengthMod) {
+public class Projectile extends Skill {
+    private BigDecimal basicStrength;
+    private BigDecimal currentStrength = BigDecimal.valueOf(0);
+    private BigDecimal range;
+    private BigDecimal speed;
+    private BigDecimal strengthMod;
+
+    public Projectile (String skillName, BigDecimal rechargeSeconds, int level, int power, BigDecimal basicStrength, BigDecimal range, BigDecimal speed, BigDecimal strengthMod) {
         super(skillName, rechargeSeconds, level, power);
         this.basicStrength = basicStrength;
         this.range = range;
         this.speed = speed;
         this.strengthMod = strengthMod;
 
-        currentStrength += basicStrength * strengthMod;
+        this.currentStrength = basicStrength.multiply(strengthMod);
     }
 
-    public float getBasicStrength() {
+    public BigDecimal getBasicStrength() {
         return basicStrength;
     }
 
-    public float getRange() {
+    public BigDecimal getRange() {
         return range;
     }
 
-    public float getSpeed() {
+    public BigDecimal getSpeed() {
         return speed;
     }
 
-    public float getStrengthMod() {
+    public BigDecimal getStrengthMod() {
         return strengthMod;
     }
 
-    public float getCurrentStrength() {
+    public BigDecimal getCurrentStrength() {
         return currentStrength;
     }
 

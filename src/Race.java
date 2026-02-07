@@ -1,4 +1,4 @@
-
+import java.math.BigDecimal;
 
 public class Race {
 
@@ -9,8 +9,8 @@ public class Race {
     static final String[] abOrc = {"Night Vision", "Savage Instinct", "Powerful Physique", "Menacing View", "Unwavering Fortitude", "Ferocious Attacks"};
 
     private String raceName;
-    private float basicHp;
-    private float speed;
+    private BigDecimal basicHp;
+    private BigDecimal speed;
     private String[] abilities;
     private int strBonus;
     private int dexBonus;
@@ -20,13 +20,13 @@ public class Race {
     private int charBonus;
     private int raceID;
 
-    public static final Race human = new Race("Human", 100f, 1.40f, abHum, 2, 2, 2, 2, 2, 2, 1);
-    public static final Race elf = new Race("Elf", 80f, 1.60f, abElf, 0, 4, 0, 0, 0, 2, 2);
-    public static final Race dwarf = new Race("Dwarf", 120f, 1.20f, abDwrf, 4, 0, 3, 0, 0, 0, 3);
-    public static final Race dragonborn = new Race("Dragonborn", 140f, 1.40f, abDrag, 5, 0, 2, 0, 0, 2, 4);
-    public static final Race orc = new Race("Orc", 250f, 1.25f, abOrc, 6, 0, 4, 0, 0, 0, 5);
+    public static final Race human = new Race("Human", BigDecimal.valueOf(100), BigDecimal.valueOf(1.40), abHum, 2, 2, 2, 2, 2, 2, 1);
+    public static final Race elf = new Race("Elf", BigDecimal.valueOf(80), BigDecimal.valueOf(1.60), abElf, 0, 4, 0, 0, 0, 2, 2);
+    public static final Race dwarf = new Race("Dwarf", BigDecimal.valueOf(120), BigDecimal.valueOf(1.20), abDwrf, 4, 0, 3, 0, 0, 0, 3);
+    public static final Race dragonborn = new Race("Dragonborn", BigDecimal.valueOf(140), BigDecimal.valueOf(1.40), abDrag, 5, 0, 2, 0, 0, 2, 4);
+    public static final Race orc = new Race("Orc", BigDecimal.valueOf(250), BigDecimal.valueOf(1.25), abOrc, 6, 0, 4, 0, 0, 0, 5);
 
-    public Race(String raceName, float basicHp, float speed, String[] abilities, int strBonus, int dexBonus, int conBonus, int intBonus, int wisBonus, int charBonus, int raceID) {
+    public Race(String raceName, BigDecimal basicHp, BigDecimal speed, String[] abilities, int strBonus, int dexBonus, int conBonus, int intBonus, int wisBonus, int charBonus, int raceID) {
         this.raceName = raceName;
         this.basicHp = basicHp;
         this.speed = speed;
@@ -44,11 +44,11 @@ public class Race {
         return raceName;
     }
 
-    public float getBasicHp() {
+    public BigDecimal getBasicHp() {
         return basicHp;
     }
 
-    public float getSpeed() {
+    public BigDecimal getSpeed() {
         return speed;
     }
 

@@ -1,35 +1,37 @@
 package CharacterAtributes;
 
-public abstract class Characteristic {
-    private int value;
-    private float modifier;
+import java.math.BigDecimal;
 
-    public Characteristic(int value) {
+public abstract class Characteristic {
+    private BigDecimal value;
+    private BigDecimal modifier;
+
+    public Characteristic(BigDecimal value) {
         this.value = value;
 
-        modifier = (value - 10) / 2;
+        this.modifier = value.subtract(BigDecimal.TEN).divide(BigDecimal.valueOf(2));
     }
 
-    public int getValue() {
+    public BigDecimal getValue() {
         return value;
     }
 
-    public float getModifier() {
+    public BigDecimal getModifier() {
         return modifier;
     }
 
-    public void addBonus(int bonus) {
-        value += bonus;
+    public void addBonus(BigDecimal bonus) {
+        value = value.add(bonus);
 
-        modifier = (value - 10) / 2;
+        this.modifier = value.subtract(BigDecimal.TEN).divide(BigDecimal.valueOf(2));
     }
 
-    public void setValue(int value) {
+    public void setValue(BigDecimal value) {
         this.value = value;
     }
 
     public void setModifier() {
-        modifier = (value - 10) / 2;
+        modifier = value.subtract(BigDecimal.TEN).divide(BigDecimal.valueOf(2));
     }
 
     public String getType() {

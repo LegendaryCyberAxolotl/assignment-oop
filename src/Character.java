@@ -1,13 +1,14 @@
 import CharacterAtributes.*;
+import java.math.BigDecimal;
 
 public class Character {
     private String name;
     private int level;
     private Race charRace;
     private Class charClass;
-    private float hp;
+    private BigDecimal hp;
     private String[] equipment;
-    private float speed;
+    private BigDecimal speed;
     private Characteristic[] characteristics;
 
 
@@ -55,7 +56,7 @@ public class Character {
         this.charClass = charClass;
     }
 
-    public void setHp(float hp) {
+    public void setHp(BigDecimal hp) {
         this.hp = hp;
     }
 
@@ -63,7 +64,7 @@ public class Character {
         this.equipment = equipment;
     }
 
-    public void setSpeed(float speed) {
+    public void setSpeed(BigDecimal speed) {
         this.speed = speed;
     }
 

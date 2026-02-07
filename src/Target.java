@@ -1,31 +1,33 @@
-public class Target extends Skill {
-    private float basicStrength;
-    private float currentStrength;
-    private float range;
-    private float strengthMod;
+import java.math.BigDecimal;
 
-    public Target (String skillName, float rechargeSeconds, int level, int power, float basicStrength, float range, float strengthMod) {
+public class Target extends Skill {
+    private BigDecimal basicStrength;
+    private BigDecimal currentStrength;
+    private BigDecimal range;
+    private BigDecimal strengthMod;
+
+    public Target (String skillName, BigDecimal rechargeSeconds, int level, int power, BigDecimal basicStrength, BigDecimal range, BigDecimal strengthMod) {
         super(skillName, rechargeSeconds, level, power);
         this.basicStrength = basicStrength;
         this.range = range;
         this.strengthMod = strengthMod;
 
-        currentStrength = basicStrength * strengthMod;
+        this.currentStrength = basicStrength.multiply(strengthMod);
     }
 
-    public float getBasicStrength() {
+    public BigDecimal getBasicStrength() {
         return basicStrength;
     }
 
-    public float getRange() {
+    public BigDecimal getRange() {
         return range;
     }
 
-    public float getStrengthMod() {
+    public BigDecimal getStrengthMod() {
         return strengthMod;
     }
 
-    public float getCurrentStrength() {
+    public BigDecimal getCurrentStrength() {
         return currentStrength;
     }
 

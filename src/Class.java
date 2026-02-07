@@ -1,7 +1,9 @@
+import java.math.BigDecimal;
+
 public class Class {
 
     private String className;
-    private float hpModifier;
+    private BigDecimal hpModifier;
     private Skill[] skills;
     private int classID;
 
@@ -9,12 +11,12 @@ public class Class {
     static final Skill[] skillsWar = {Skill.slash, Skill.secondBreath, Skill.swordFury};
     static final Skill[] skillsWiz = {Skill.fireball, Skill.madness, Skill.storm};
 
-    public static final Class archer = new Class("Archer", 1f, skillsChr, 1);
-    public static final Class warrior = new Class("Warrior", 2f, skillsWar, 2);
-    public static final Class wizard = new Class("Wizard", 0.5f, skillsWiz, 3);
+    public static final Class archer = new Class("Archer", BigDecimal.valueOf(1), skillsChr, 1);
+    public static final Class warrior = new Class("Warrior", BigDecimal.valueOf(2), skillsWar, 2);
+    public static final Class wizard = new Class("Wizard", BigDecimal.valueOf(0.5), skillsWiz, 3);
 
 
-    public Class(String className, float hpModifier, Skill[] skills, int classID) {
+    public Class(String className, BigDecimal hpModifier, Skill[] skills, int classID) {
         this.className = className;
         this.hpModifier = hpModifier;
         this.skills = skills;
@@ -25,7 +27,7 @@ public class Class {
         return className;
     }
 
-    public float getHpModifier() {
+    public BigDecimal getHpModifier() {
         return hpModifier;
     }
 

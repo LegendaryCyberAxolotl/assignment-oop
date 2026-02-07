@@ -1,22 +1,24 @@
+import java.math.BigDecimal;
+
 public abstract class Skill {
     private String skillName;
-    private float rechargeSeconds;
+    private BigDecimal rechargeSeconds;
     private int level;
     private int power;
 
-    public static final Projectile burstArrow = new Projectile("Burst Arrow", 5f, 1, 1, 10f, 10f, 50f, 2f);
-    public static final Target mark = new Target("Archer Mark", 60f, 3, 1, 0f, 100f, 1f);
-    public static final AOEskill hawkEye = new AOEskill("Hawk Eye", 30f, 5, 1, 20f, 75f, 20f, 1);
+    public static final Projectile burstArrow = new Projectile("Burst Arrow", BigDecimal.valueOf(5), 1, 1, BigDecimal.valueOf(10), BigDecimal.valueOf(10), BigDecimal.valueOf(50), BigDecimal.valueOf(2));
+    public static final Target mark = new Target("Archer Mark", BigDecimal.valueOf(60), 3, 1, BigDecimal.valueOf(0), BigDecimal.valueOf(100), BigDecimal.valueOf(1));
+    public static final AOEskill hawkEye = new AOEskill("Hawk Eye", BigDecimal.valueOf(30), 5, 1, BigDecimal.valueOf(20), BigDecimal.valueOf(75), BigDecimal.valueOf(20), BigDecimal.valueOf(1));
 
-    public static final Projectile slash = new Projectile("Slash", 10f, 1, 1, 15f, 10f, 10f, 2f);
-    public static final Target secondBreath = new Target("Second Breath", 20f, 3, 1, 25f, 0f, 1f);
-    public static final AOEskill swordFury = new AOEskill("Sword o' fury", 30f, 5, 1, 50f, 10f, 10f, 1);
+    public static final Projectile slash = new Projectile("Slash", BigDecimal.valueOf(10), 1, 1, BigDecimal.valueOf(15), BigDecimal.valueOf(10), BigDecimal.valueOf(10), BigDecimal.valueOf(2));
+    public static final Target secondBreath = new Target("Second Breath", BigDecimal.valueOf(20), 3, 1, BigDecimal.valueOf(25), BigDecimal.valueOf(0), BigDecimal.valueOf(1));
+    public static final AOEskill swordFury = new AOEskill("Sword o' fury", BigDecimal.valueOf(30), 5, 1, BigDecimal.valueOf(50), BigDecimal.valueOf(10), BigDecimal.valueOf(10), BigDecimal.valueOf(1));
 
-    public static final AOEskill fireball = new AOEskill("Fireball", 20f, 1, 1, 20f, 50f, 20f, 1);
-    public static final Target madness = new Target("Madness", 30f, 3, 1, 5f, 20f, 1f);
-    public static final AOEskill storm = new AOEskill("Storm", 40f, 5, 1, 30f, 100f, 50f, 1);
+    public static final AOEskill fireball = new AOEskill("Fireball", BigDecimal.valueOf(20), 1, 1, BigDecimal.valueOf(20), BigDecimal.valueOf(50), BigDecimal.valueOf(20), BigDecimal.valueOf(1));
+    public static final Target madness = new Target("Madness", BigDecimal.valueOf(30), 3, 1, BigDecimal.valueOf(5), BigDecimal.valueOf(20), BigDecimal.valueOf(1));
+    public static final AOEskill storm = new AOEskill("Storm", BigDecimal.valueOf(40), 5, 1, BigDecimal.valueOf(30), BigDecimal.valueOf(100), BigDecimal.valueOf(50), BigDecimal.valueOf(1));
 
-    public Skill (String skillName, float rechargeSeconds, int level, int power) {
+    public Skill (String skillName, BigDecimal rechargeSeconds, int level, int power) {
         this.skillName = skillName;
         this.rechargeSeconds = rechargeSeconds;
         this.level = level;
@@ -29,7 +31,7 @@ public abstract class Skill {
         return skillName;
     }
 
-    public float getRechargeSeconds() {
+    public BigDecimal getRechargeSeconds() {
         return rechargeSeconds;
     }
 

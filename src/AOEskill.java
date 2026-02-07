@@ -1,37 +1,39 @@
-public class AOEskill extends Skill {
-    private float basicStrength;
-    private float currentStrength;
-    private float range;
-    private float radius;
-    private float strengthMod;
+import java.math.BigDecimal;
 
-    public AOEskill (String skillName, float rechargeSeconds, int level, int power, float basicStrength, float range, float radius, float strengthMod) {
+public class AOEskill extends Skill {
+    private BigDecimal basicStrength;
+    private BigDecimal currentStrength;
+    private BigDecimal range;
+    private BigDecimal radius;
+    private BigDecimal strengthMod;
+
+    public AOEskill (String skillName, BigDecimal rechargeSeconds, int level, int power, BigDecimal basicStrength, BigDecimal range, BigDecimal radius, BigDecimal strengthMod) {
         super(skillName, rechargeSeconds, level, power);
         this.basicStrength = basicStrength;
         this.range = range;
         this.radius = radius;
         this.strengthMod = strengthMod;
 
-        currentStrength = basicStrength * strengthMod;
+        this.currentStrength = basicStrength.multiply(strengthMod);
     }
 
-    public float getBasicStrength() {
+    public BigDecimal getBasicStrength() {
         return basicStrength;
     }
 
-    public float getRange() {
+    public BigDecimal getRange() {
         return range;
     }
 
-    public float getRadius() {
+    public BigDecimal getRadius() {
         return radius;
     }
 
-    public float getStrengthMod() {
+    public BigDecimal getStrengthMod() {
         return strengthMod;
     }
 
-    public float getCurrentStrength() {
+    public BigDecimal getCurrentStrength() {
         return currentStrength;
     }
 

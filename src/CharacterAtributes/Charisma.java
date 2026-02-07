@@ -1,9 +1,11 @@
 package CharacterAtributes;
 
+import java.math.BigDecimal;
+
 public class Charisma extends Characteristic{
     private String type;
 
-    public Charisma(int value) {
+    public Charisma(BigDecimal value) {
         super(value);
         this.type = "Mental";
     }
